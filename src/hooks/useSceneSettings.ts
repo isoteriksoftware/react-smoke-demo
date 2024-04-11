@@ -52,18 +52,18 @@ export const useSceneSettings = (): SceneSettings => {
   const smokeTextures = useMemo(() => getSmokeTextures(), []);
 
   const smokeControls = useControls("Smoke", {
-    color: "#ffffff",
+    color: "#ff0000",
     opacity: { value: 0.5, min: 0, max: 1 },
     density: { value: 50, min: 1, max: 10000, step: 1 },
     enableFrustumCulling: true,
-    enableTurbulence: false,
+    enableTurbulence: true,
     turbulenceStrength: {
       value: [0.001, 0.001, 0.001],
       step: 0.001,
       min: -1000,
       max: 1000,
     },
-    enableWind: false,
+    enableWind: true,
     windStrength: {
       value: [0.001, 0.001, 0.001],
       step: 0.001,
@@ -71,9 +71,9 @@ export const useSceneSettings = (): SceneSettings => {
       max: 1000,
     },
     windDirection: { value: [1, 0, 0], step: 0.001, min: -1, max: 1 },
-    enableRotation: false,
+    enableRotation: true,
     rotation: { value: [0, 0, 0.0011], step: 0.001, min: -1000, max: 1000 },
-    maxVelocity: { value: [0.5, 0.5, 0], step: 0.001, min: -1000, max: 1000 },
+    maxVelocity: { value: [0.1, 0.1, 0], step: 0.001, min: -1000, max: 1000 },
     velocityResetFactor: { value: 0.001, min: 0, max: 1000, step: 0.001 },
     size: { value: [1000, 1000, 1000], step: 1, min: 1, max: 10000 },
     minBounds: { value: [-800, -800, -800], step: 1, min: -10000, max: 0 },
@@ -92,13 +92,13 @@ export const useSceneSettings = (): SceneSettings => {
   const cameraControls = useControls("Camera", {
     fov: { value: 60, min: 1, max: 180 },
     position: {
-      value: [0, 65, 164],
+      value: [0, 0, 500],
       step: 1,
       min: -1000,
       max: 1000,
     },
     near: { value: 0.1, min: 0.1, max: 1000 },
-    far: { value: 520, min: 1, max: 1000 },
+    far: { value: 6000, min: 10, max: 10000 },
   });
 
   const sceneControls = useControls("Scene", {
