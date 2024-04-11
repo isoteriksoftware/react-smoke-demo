@@ -1,4 +1,4 @@
-import { DemoSmokeScene } from "./components/DemoSmokeScene";
+import { DemoSmokeScene } from "../components/DemoSmokeScene";
 
 export default function Home() {
   return <DemoSmokeScene />;
