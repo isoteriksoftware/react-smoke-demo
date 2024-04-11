@@ -1,32 +1,7 @@
 import { useControls } from "leva";
+import { useMemo } from "react";
 import { ThreeAxisValue } from "react-smoke";
-
-const smokeTextures = ["default.png"];
-
-for (let i = 0; i <= 24; i++) {
-  const suffix = String(i).padStart(2, "0");
-  smokeTextures.push(`blackSmoke${suffix}.png`);
-}
-
-for (let i = 0; i <= 8; i++) {
-  const suffix = String(i).padStart(2, "0");
-  smokeTextures.push(`explosion${suffix}.png`);
-}
-
-for (let i = 0; i <= 8; i++) {
-  const suffix = String(i).padStart(2, "0");
-  smokeTextures.push(`fart${suffix}.png`);
-}
-
-for (let i = 0; i <= 8; i++) {
-  const suffix = String(i).padStart(2, "0");
-  smokeTextures.push(`flash${suffix}.png`);
-}
-
-for (let i = 0; i <= 24; i++) {
-  const suffix = String(i).padStart(2, "0");
-  smokeTextures.push(`whitePuff${suffix}.png`);
-}
+import { getSmokeTextures } from "../utils";
 
 export type SceneSettings = {
   smokeControls: {
@@ -57,9 +32,25 @@ export type SceneSettings = {
     near: number;
     far: number;
   };
+  sceneControls: {
+    background: string;
+  };
+  ambientLightControls: {
+    enabled: boolean;
+    color: string;
+    intensity: number;
+  };
+  directionalLightControls: {
+    enabled: boolean;
+    color: string;
+    intensity: number;
+    position: ThreeAxisValue;
+  };
 };
 
 export const useSceneSettings = (): SceneSettings => {
+  const smokeTextures = useMemo(() => getSmokeTextures(), []);
+
   const smokeControls = useControls("Smoke", {
     color: "#ffffff",
     opacity: { value: 0.5, min: 0, max: 1 },
@@ -110,8 +101,33 @@ export const useSceneSettings = (): SceneSettings => {
     far: { value: 520, min: 1, max: 1000 },
   });
 
+  const sceneControls = useControls("Scene", {
+    background: "#000000",
+  });
+
+  const ambientLightControls = useControls("Ambient Light", {
+    enabled: true,
+    color: "#ffffff",
+    intensity: { value: 1, min: 0, max: 1 },
+  });
+
+  const directionalLightControls = useControls("Directional Light", {
+    enabled: true,
+    color: "#ffffff",
+    intensity: { value: 1, min: 0, max: 1 },
+    position: {
+      value: [-1, 0, 1],
+      step: 1,
+      min: -1000,
+      max: 1000,
+    },
+  });
+
   return {
     smokeControls,
     cameraControls,
+    sceneControls,
+    ambientLightControls,
+    directionalLightControls,
   };
 };
