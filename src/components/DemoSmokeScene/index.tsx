@@ -5,6 +5,7 @@ import { Stats } from "@react-three/drei";
 import { useSceneSettings } from "@/hooks/useSceneSettings";
 import { CameraUpdate } from "../CameraUpdate";
 import { DemoSmoke } from "../DemoSmoke";
+import { Footer } from "@/components/Footer";
 
 export const DemoSmokeScene = () => {
   const {
@@ -46,6 +47,17 @@ export const DemoSmokeScene = () => {
         <Stats />
         <CameraUpdate {...cameraControls} {...sceneControls} />
       </Canvas>
+
+      <div
+        style={{
+          position: "absolute",
+          bottom: 0,
+          left: 0,
+          width: "100%",
+        }}
+      >
+        <Footer />
+      </div>
     </main>
   );
 };
