@@ -1,5 +1,5 @@
 import { memo, Suspense, useMemo } from "react";
-import { SceneSettings } from "../../hooks/useSceneSettings";
+import { SceneSettings } from "@/hooks/useSceneSettings";
 import * as THREE from "three";
 import { Smoke } from "react-smoke";
 

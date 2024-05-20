@@ -1,5 +1,5 @@
 import { useThree } from "@react-three/fiber";
-import { SceneSettings } from "../../hooks/useSceneSettings";
+import { SceneSettings } from "@/hooks/useSceneSettings";
 import { useEffect, useMemo } from "react";
 import { PerspectiveCamera } from "three";
 import * as THREE from "three";
@@ -15,7 +15,7 @@ export const CameraUpdate = ({
 
   const sceneBackground = useMemo(
     () => new THREE.Color(background),
-    [background]
+    [background],
   );
 
   useEffect(() => {

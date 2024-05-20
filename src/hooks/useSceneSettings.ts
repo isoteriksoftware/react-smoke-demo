@@ -1,7 +1,7 @@
 import { useControls } from "leva";
 import { useMemo } from "react";
 import { ThreeAxisValue } from "react-smoke";
-import { getSmokeTextures } from "../utils";
+import { getSmokeTextures } from "@/utils";
 
 export type SceneSettings = {
   smokeControls: {

@@ -2,11 +2,8 @@
 
 import { Canvas } from "@react-three/fiber";
 import { Stats } from "@react-three/drei";
-import { Suspense, useMemo } from "react";
-import { Smoke } from "react-smoke";
-import { useSceneSettings } from "../../hooks/useSceneSettings";
+import { useSceneSettings } from "@/hooks/useSceneSettings";
 import { CameraUpdate } from "../CameraUpdate";
-import * as THREE from "three";
 import { DemoSmoke } from "../DemoSmoke";
 
 export const DemoSmokeScene = () => {
