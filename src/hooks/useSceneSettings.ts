@@ -52,7 +52,7 @@ export const useSceneSettings = (): SceneSettings => {
   const smokeTextures = useMemo(() => getSmokeTextures(), []);
 
   const smokeControls = useControls("Smoke", {
-    color: "#ff0000",
+    color: "#ffffff",
     opacity: { value: 0.5, min: 0, max: 1 },
     density: { value: 50, min: 1, max: 10000, step: 1 },
     enableFrustumCulling: true,
@@ -72,12 +72,12 @@ export const useSceneSettings = (): SceneSettings => {
     },
     windDirection: { value: [1, 0, 0], step: 0.001, min: -1, max: 1 },
     enableRotation: true,
-    rotation: { value: [0, 0, 0.0011], step: 0.001, min: -1000, max: 1000 },
+    rotation: { value: [0, 0, 0.1], step: 0.001, min: -1000, max: 1000 },
     maxVelocity: { value: [0.1, 0.1, 0], step: 0.001, min: -1000, max: 1000 },
     velocityResetFactor: { value: 0.001, min: 0, max: 1000, step: 0.001 },
-    size: { value: [1000, 1000, 1000], step: 1, min: 1, max: 10000 },
-    minBounds: { value: [-800, -800, -800], step: 1, min: -10000, max: 0 },
-    maxBounds: { value: [800, 800, 800], step: 1, min: 1, max: 10000 },
+    size: { value: [400, 400, 400], step: 1, min: 1, max: 10000 },
+    minBounds: { value: [-200, -200, -200], step: 1, min: -10000, max: 0 },
+    maxBounds: { value: [400, 400, 400], step: 1, min: 1, max: 10000 },
     castShadow: false,
     receiveShadow: false,
     texture: {
