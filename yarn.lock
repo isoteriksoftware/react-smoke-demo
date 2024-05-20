@@ -2522,10 +2522,10 @@ react-reconciler@^0.27.0:
     loose-envify "^1.1.0"
     scheduler "^0.21.0"
 
-react-smoke@^1.0.6:
-  version "1.0.6"
-  resolved "https://registry.yarnpkg.com/react-smoke/-/react-smoke-1.0.6.tgz#387e1e092b4f557859d86b419dde5e5906b63f2f"
-  integrity sha512-LO8NS7f4A0hhdvLvsR6kjXAFPWdRmPb5h3tc4HSRc9BFSZmKkZl+Pw4TMykjX41j36dvrHEc91ETJzPWI7iAbQ==
+react-smoke@^1.1.0:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/react-smoke/-/react-smoke-1.1.0.tgz#412d1e30ecf64ef9430d14959e632f87c3888d81"
+  integrity sha512-qA+AeLVtBl3C03JIKOgTJDlv3R+2Q4XAfWNQQoVZv4saLWg5eEASa/iuhZtZZDTqeZm98r0T/gN48tc6UYsUbQ==
 
 react-use-measure@^2.1.1:
   version "2.1.1"
